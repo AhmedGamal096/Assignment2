@@ -1,6 +1,10 @@
 const path = require ("node:path") ;
+const EventEmitter = require ("node:events") ;
+const emiter = new EventEmitter();
 const fs = require ("node:fs") ;
 const { log, error } = require("node:console");
+const os = require("node:os");
+const { emit } = require("node:process");
 
 // 1. Write a function that logs the current file path and directory.
 
@@ -72,7 +76,7 @@ const { log, error } = require("node:console");
 // } ;
 // deleteFile("text.txt");
 
-// 11. Write a function that creates a folder synchronously. (1 Grade)
+// 11. Write a function that creates a folder synchronously.
 // function creatSyncFolder(filePath){
 //     try{
 //         fs.mkdirSync(filePath , {recursive:true});
@@ -83,3 +87,46 @@ const { log, error } = require("node:console");
 //     }  
 // } 
 // creatSyncFolder("./Folder1");
+
+// 12. Create an event emitter that listens for a "start" event and logs a welcome message.
+// emiter.on("start" , ()=>{
+//     console.log("Welcome event triggered!");
+// });
+// emiter.emit("start");
+
+// 13. Emit a custom "login" event with a username parameter.
+//     emiter.on("login" , (userName)=>{
+//     console.log(`User logged in: ${userName}`);
+//     });
+//     emiter.emit("login" , "Ahmed");
+
+// 14. Read a file synchronously and log its contents.
+//     try {
+//     const data = fs.readFileSync("text.txt", "utf8");
+//     console.log(data);
+//     } catch (err) {
+//     console.log(err);
+//     }
+
+// 15. Write asynchronously to a file.
+//     const content = "Async save" ;
+//     fs.writeFile("text.txt", content, err => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("file written successfully"); 
+//   }
+//   });
+
+// 16. Check if a directory exists .
+//    const result = fs.existsSync("text.txt") ;
+//    console.log(result);
+
+// 17. Write a function that returns the OS platform and CPU architecture.
+//     function getOsInfo (){
+//     return {platform: os.platform(), arch: os.arch()};
+//     }
+//     const info = getOsInfo();
+//     console.log(info);
+    
+
