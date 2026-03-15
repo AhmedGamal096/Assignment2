@@ -7,6 +7,11 @@ const os = require("node:os");
 const { emit } = require("node:process");
 
 // 1. Write a function that logs the current file path and directory.
+//  function getFilePath (filePath){
+//     return {File: path.resolve(filePath) , Dir: path.dirname(filePath)};
+//     }
+//     const info = getFilePath("/user/files/report.pdf");
+//     console.log(info);
 
 // 2. Write a function that takes a file path and returns its file name.
 // function getBaseName(filePath){
